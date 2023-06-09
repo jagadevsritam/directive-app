@@ -1,0 +1,123 @@
+<p>test works!</p>
+<div *ngIf="true">Display data</div>
+
+<br/>
+---------------------------------------
+<p>ngIfElse example!</p>
+<div *ngIf="isLogIn; else isLogOut">
+    Hello you are logged in
+</div>
+<ng-template #isLogOut>
+    You're logged out..
+</ng-template>
+
+<br/>
+---------------------------------------
+<h2>ngFor directive</h2>
+<ul>
+    <li *ngFor="let l of list">
+        {{l}}
+    </li>
+</ul>
+
+<br/>
+---------------------------------------
+<ul>
+    <li *ngFor="let std of studentArr; trackBy: trackByData">
+        {{std.name}}
+    </li>
+</ul>
+
+<br/>
+---------------------------------------
+<h2>ngSwitch directive</h2>
+<ul [ngSwitch]="logInName">
+    <li *ngSwitchCase="'user'">
+        <p>User is logged in..</p>
+    </li>
+    <li *ngSwitchCase="'admin'">
+        <p>admin is logged in</p>
+    </li>
+    <li *ngSwitchDefault>
+        <p>Please choose login name</p>
+    </li>
+</ul>
+
+<br/>
+---------------------------------------
+<p [ngStyle]="{'color': 'blue', 'font-size': '14px'}">
+    paragraph style is applied using ngStyle
+</p>
+
+<br/>
+---------------------------------------
+<div class="container">
+    <br/>
+    <div *ngFor="let user of users" [ngClass]="{
+      'highlight':user.userName === 'User1'
+   }">
+        {{ user.userName }}
+    </div>
+</div>
+
+<br/>
+---------------------------------------
+<h1 appCustomstyle>Custom Directive Example !</h1>
+
+<br/>
+---------------------------------------
+<ng-template [ngIf]=true>
+    <div><h2>ng-template works!</h2></div>
+</ng-template>
+
+<br/>
+---------------------------------------
+<app-test1></app-test1><!--component-->
+
+<br/>
+---------------------------------------
+<h1>Test component</h1>
+<app-child [userName]="name"></app-child>
+
+<br/>
+---------------------------------------
+<div>
+    Today's date :- {{presentDate | date}}
+</div>
+<div>
+    short date :- {{presentDate | date:'shortDate' }} <br/>
+    Full date :- {{presentDate | date:'fullDate' }} <br/>
+    Formatted date:- {{presentDate | date:'M/dd/yyyy'}} <br/>
+    Hours and minutes:- {{presentDate | date:'h:mm'}}
+</div>
+<div>
+    Date with uppercase :- {{presentDate | date:'fullDate' | uppercase}} <br/>
+    Date with lowercase :- {{presentDate | date:'medium' | lowercase}} <br/>
+</div>
+<div>
+    Seconds changing in Time: {{ timeChange | async }}
+</div>
+
+<br/>
+---------------------------------------
+<app-currency-pipe-component></app-currency-pipe-component>
+
+<br/>
+---------------------------------------
+<app-slice-pipe-component></app-slice-pipe-component>
+
+<br/>
+---------------------------------------
+<app-decimal-pipe-component></app-decimal-pipe-component>
+
+<br/>
+---------------------------------------
+<app-percent-pipe-component></app-percent-pipe-component>
+
+<br/>
+---------------------------------------
+<app-json-pipe-component></app-json-pipe-component>
+
+<br/>
+---------------------------------------
+<app-digitcoun-customt-component></app-digitcoun-customt-component>
